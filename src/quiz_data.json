@@ -2,21 +2,33 @@
   "quiz_questions": [
     {
       "id": 1,
-      "instruction_text": "\"When you do something best in life, you don’t really want to give that up – and for me it’s tennis\"",
+      "instruction_text": "\"When you do something best in life, you don’t really want to give that up – and for me it’s tennis.\"",
       "answer_options": ["Pete Sampras", "Novak Djokovic", "Roger Federer", "Rafael Nadal"],
       "answer": "Roger Federer"
     },
     {
       "id": 2,
-      "instruction_text": "What's your favorite number?",
-      "answer_options": ["1", "2", "3", "4"],
-      "answer": "4"
+      "instruction_text": "\"Don't gain the world and lose your soul, wisdom is better than silver or gold.\"",
+      "answer_options": ["Bob Dylan", "Bob Marley", "Bob Holness", "Bob Monkhouse"],
+      "answer": "Bob Marley"
     },
     {
       "id": 3,
-      "instruction_text": "What colour is sweetcorn?",
-      "answer_options": ["Red", "Orange", "Yellow", "Green"],
-      "answer": "Yellow"
+      "instruction_text": "\"You miss 100 percent of the shots you never take.\"",
+      "answer_options": ["Michael Jordon", "Wayne Gretzky", "Christiano Ronaldo", "David Beckham"],
+      "answer": "Wayne Gretzky"
+    },
+    {
+      "id": 4,
+      "instruction_text": "\"Education is the most powerful weapon which you can use to change the world.\"",
+      "answer_options": ["Nelson Mandela", "Marton Luther King", "Mahatma Gandhi", "14th Dalai Lama"],
+      "answer": "Nelson Mandela"
+    },
+    {
+      "id": 5,
+      "instruction_text": "\"Be a yardstick of quality. Some people aren't used to an environment where excellence is expected.\"",
+      "answer_options": ["Jeff Bezos", "Bill Gates", "Steve Jobs", "Elon Musk"],
+      "answer": "Steve Jobs"
     }
   ]
 }
