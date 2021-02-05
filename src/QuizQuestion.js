@@ -27,7 +27,7 @@ this.state = { incorrectAnswer : false}
         <main>
            
           <section>
-            <p>{this.props.quiz_question.instruction_text}</p>
+            <h2 className="questionDiv" >{this.props.quiz_question.instruction_text}</h2>
           </section>
           <section className="buttons">
             <ul>

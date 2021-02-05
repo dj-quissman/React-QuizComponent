@@ -7,3 +7,25 @@ body {
 button {
   width: 300px;
 }
+
+.title {
+  text-align: center;
+  border: solid black 1px;
+  background-color: darkblue;
+  color: white;
+  padding: 15px 0;
+}
+
+.questionDiv {
+  text-align: center;
+  width:80%;
+  margin: 0 auto 0 auto;
+}
+
+li {
+  list-style-type: none;
+}
+
+.quizButton {
+  padding: 10px 0;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import QuizQuestion from "./QuizQuestion";
 import QuizEnd from "./QuizEnd";
+import Header from "./Header";
 
 let quizData = require("./quiz_data.json");
 
@@ -17,7 +18,7 @@ this.setState((state) => {
 }
 
 handleResetClick() {
- this,this.setState({quiz_position : 1})
+ this.setState({quiz_position : 1})
 }
 
   render() {
@@ -25,12 +26,14 @@ const isQuizEnd = ((this.state.quiz_position - 1) === quizData.quiz_questions.le
 
     return (
       <div>
+        <Header/>
           { isQuizEnd ? <QuizEnd resetClickHandler={this.handleResetClick.bind(this)}  /> : <QuizQuestion
           quiz_question={quizData.quiz_questions[this.state.quiz_position - 1]}
           showNextQuestionHandler={this.showNextQuestion.bind(this)}
         />
     }
       </div>
+      
     );
   }
 }

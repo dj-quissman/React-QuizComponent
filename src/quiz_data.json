@@ -2,9 +2,9 @@
   "quiz_questions": [
     {
       "id": 1,
-      "instruction_text": "How many continents are there on Planet Earth?",
-      "answer_options": ["5", "6", "7", "8"],
-      "answer": "7"
+      "instruction_text": "\"When you do something best in life, you don’t really want to give that up – and for me it’s tennis\"",
+      "answer_options": ["Pete Sampras", "Novak Djokovic", "Roger Federer", "Rafael Nadal"],
+      "answer": "Roger Federer"
     },
     {
       "id": 2,
