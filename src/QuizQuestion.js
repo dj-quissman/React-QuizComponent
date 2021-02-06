@@ -19,7 +19,7 @@ class QuizQuestion extends Component {
         errCount: this.state.errCount + 1,
       });
 
-      this.props.getErrorsFromBelow(this.state.errCount + 1); //this method is declared above
+      this.props.setFinalErrorsHandler(this.state.errCount + 1); //this method is declared above
     }
   }
   render() {
