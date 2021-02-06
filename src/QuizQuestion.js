@@ -5,19 +5,28 @@ class QuizQuestion extends Component {
 constructor(props) {
 super(props)
 
-this.state = { incorrectAnswer : false}
+this.state = { incorrectAnswer : false,
+errCount : 0}
 
 }
+
+// sendSate() {
+//   return this.state.errCount;
+// }
 
   handleClick(buttonText) {
 
     if(buttonText === this.props.quiz_question.answer) {
        this.setState({incorrectAnswer : false})
         
-        this.props.showNextQuestionHandler()
+        this.props.showNextQuestionHandler() //this method declared above
 
     } else {
-        this.setState({incorrectAnswer : true})
+        this.setState({incorrectAnswer : true,
+          errCount : this.state.errCount +1})
+
+          this.props.getErrorsFromBellow(this.state.errCount + 1) //this method is declared above
+
     }
 
   }
@@ -44,7 +53,8 @@ this.state = { incorrectAnswer : false}
               )}
             </ul>
           </section>
-          {this.state.incorrectAnswer ? <p className="error">Sorry, that's not right</p> : null}
+          {this.state.incorrectAnswer ? <div className="errorCountDiv error"><div className="">Sorry, that's not right.</div><div>Error count = {this.state.errCount}</div></div> : null}
+          {/* {this.props.final_err_count = this.state.errCount} */}
         </main>
       </div>
     );

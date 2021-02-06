@@ -8,7 +8,8 @@ let quizData = require("./quiz_data.json");
 class Quiz extends Component {
   constructor(props) {
     super(props);
-    this.state = { quiz_position: 1 };
+    this.state = { quiz_position: 1,
+    finalErrCountObj : 0 };
   }
 
   showNextQuestion() {
@@ -21,6 +22,10 @@ class Quiz extends Component {
     this.setState({ quiz_position: 1 });
   }
 
+  setFinalErrors(passedErrors) {
+    this.setState({ finalErrCountObj : passedErrors})
+  }
+
   render() {
     const isQuizEnd =
       this.state.quiz_position - 1 === quizData.quiz_questions.length;
@@ -29,13 +34,17 @@ class Quiz extends Component {
       <div className="imageDiv">
         <Header />
         {isQuizEnd ? (
-          <QuizEnd resetClickHandler={this.handleResetClick.bind(this)} />
+          <QuizEnd resetClickHandler={this.handleResetClick.bind(this)} 
+         sendFinalErrerScore = {this.state.finalErrCountObj}//
+          />
         ) : (
           <QuizQuestion
             quiz_question={
               quizData.quiz_questions[this.state.quiz_position - 1]
             }
             showNextQuestionHandler={this.showNextQuestion.bind(this)}
+
+            getErrorsFromBellow={this.setFinalErrors.bind(this)}
           />
         )}
       </div>
