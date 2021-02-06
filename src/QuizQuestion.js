@@ -9,7 +9,7 @@ class QuizQuestion extends Component {
   }
 
   handleClick(buttonText) {
-    if (buttonText === this.props.quiz_question.answer) {
+    if (buttonText === this.props.quizQuestion.answer) {
       this.setState({ incorrectAnswer: false });
 
       this.props.showNextQuestionHandler(); //this method is declared above
@@ -28,12 +28,12 @@ class QuizQuestion extends Component {
         <main>
           <section>
             <h2 className="questionDiv">
-              {this.props.quiz_question.instruction_text}
+              {this.props.quizQuestion.instruction_text}
             </h2>
           </section>
           <section className="buttons">
             <ul>
-              {this.props.quiz_question.answer_options.map(
+              {this.props.quizQuestion.answer_options.map(
                 (answer_option, index) => {
                   return (
                     <QuizQuestionButton
