@@ -35,7 +35,7 @@ class Quiz extends Component {
         <Header />
         {isQuizEnd ? (
           <QuizEnd resetClickHandler={this.handleResetClick.bind(this)} 
-         sendFinalErrerScore = {this.state.finalErrCountObj}//
+         sendFinalErrorScore = {this.state.finalErrCountObj}//
           />
         ) : (
           <QuizQuestion
@@ -44,7 +44,7 @@ class Quiz extends Component {
             }
             showNextQuestionHandler={this.showNextQuestion.bind(this)}
 
-            getErrorsFromBellow={this.setFinalErrors.bind(this)}
+            getErrorsFromBelow={this.setFinalErrors.bind(this)}
           />
         )}
       </div>

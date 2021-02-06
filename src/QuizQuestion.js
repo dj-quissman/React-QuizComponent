@@ -2,41 +2,34 @@ import React, { Component } from "react";
 import QuizQuestionButton from "./QuizQuestionButton";
 
 class QuizQuestion extends Component {
-constructor(props) {
-super(props)
+  constructor(props) {
+    super(props);
 
-this.state = { incorrectAnswer : false,
-errCount : 0}
-
-}
-
-// sendSate() {
-//   return this.state.errCount;
-// }
+    this.state = { incorrectAnswer: false, errCount: 0 };
+  }
 
   handleClick(buttonText) {
+    if (buttonText === this.props.quiz_question.answer) {
+      this.setState({ incorrectAnswer: false });
 
-    if(buttonText === this.props.quiz_question.answer) {
-       this.setState({incorrectAnswer : false})
-        
-        this.props.showNextQuestionHandler() //this method declared above
-
+      this.props.showNextQuestionHandler(); //this method is declared above
     } else {
-        this.setState({incorrectAnswer : true,
-          errCount : this.state.errCount +1})
+      this.setState({
+        incorrectAnswer: true,
+        errCount: this.state.errCount + 1,
+      });
 
-          this.props.getErrorsFromBellow(this.state.errCount + 1) //this method is declared above
-
+      this.props.getErrorsFromBelow(this.state.errCount + 1); //this method is declared above
     }
-
   }
   render() {
     return (
       <div>
         <main>
-           
           <section>
-            <h2 className="questionDiv" >{this.props.quiz_question.instruction_text}</h2>
+            <h2 className="questionDiv">
+              {this.props.quiz_question.instruction_text}
+            </h2>
           </section>
           <section className="buttons">
             <ul>
@@ -45,7 +38,7 @@ errCount : 0}
                   return (
                     <QuizQuestionButton
                       key={index}
-                      button_text={answer_option} 
+                      button_text={answer_option}
                       clickHandler={this.handleClick.bind(this)}
                     />
                   );
@@ -53,8 +46,12 @@ errCount : 0}
               )}
             </ul>
           </section>
-          {this.state.incorrectAnswer ? <div className="errorCountDiv error"><div className="">Sorry, that's not right.</div><div>Error count = {this.state.errCount}</div></div> : null}
-          {/* {this.props.final_err_count = this.state.errCount} */}
+          {this.state.incorrectAnswer ? (
+            <div className="errorCountDiv error">
+              <div className="">Sorry, that's not right.</div>
+              <div>Error count = {this.state.errCount}</div>
+            </div>
+          ) : null}
         </main>
       </div>
     );

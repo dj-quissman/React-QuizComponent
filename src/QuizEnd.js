@@ -9,7 +9,7 @@ this.props.resetClickHandler()
     return (
       <div className="quizEndDiv">
         <p>Thanks for playing!</p>
-        <p>You made {this.props.sendFinalErrerScore} errors.</p>
+        <p>You made {this.props.sendFinalErrorScore} errors.</p>
 
         <a href="" onClick={this.handleResetClick.bind(this)}> Reset Quiz</a>
       </div>
